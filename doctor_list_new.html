@@ -87,7 +87,7 @@
     <script>
         get_doctor_api();
         function get_doctor_api() {
-            fetch('https://imi-62-231-bn-git-main-kks-projects-b9c442cd.vercel.app/getDoctors')
+            fetch('https://imi62-231-fn-nu.vercel.app/getDoctors/getDoctors')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -160,7 +160,7 @@
             if (doctor_name_f.trim() == "" || doctor_phone_f.trim() == "") {
                 alert("กรุณากรอกข้อมูลให้ถูกต้อง");
             } else {
-                const apiUrl = (edit_type_f=="new")?'https://imi-62-231-bn-git-main-kks-projects-b9c442cd.vercel.app/addDoctor':"https://imi-62-231-bn-git-main-kks-projects-b9c442cd.vercel.app/editDoctor";
+                const apiUrl = (edit_type_f=="new")?'https://imi62-231-fn-nu.vercel.app/addDoctor':"https://imi62-231-fn-nu.vercel.app/editDoctor";
                 
                 const data = {
                     doctor_id:doctor_ID_f,
@@ -169,7 +169,7 @@
                     status: doctor_status_f,
                 };
 
-                const requestOptions = {
+                const requestOptions 
                     method: (edit_type_f=="new")?'POST':'put',
                     headers: {
                         'Content-Type': 'application/json',
