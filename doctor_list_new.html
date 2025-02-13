@@ -128,7 +128,8 @@
             document.getElementById('FormModalLabel').innerHTML = "แก้ไขข้อมูลแพทย์";
             document.getElementById('edit_type').value="update";
             document.getElementById('form_docter_id').style.display = "block";
-            fetch('https://imi62-231-fn-nu.vercel.app/getDoctor'+id)
+            fetch('fetch('https://imi62-231-fn-nu.vercel.app/getDoctor/' + id)
+'+id)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -169,13 +170,14 @@
                     status: doctor_status_f,
                 };
 
-                const requestOptions 
-                    method: (edit_type_f=="new")?'POST':'put',
-                    headers: {
+                const requestOptions = {
+                 method: (edit_type_f == "new") ? 'POST' : 'PUT', 
+                 headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data),
+                 body: JSON.stringify(data),
                 };
+
 
                 fetch(apiUrl, requestOptions)
                     .then(response => {
